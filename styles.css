@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=ZCOOL+KuaiLe&display=swap');
+
+:root{
+    --main-width: 70vw;
+    --main-height: 90vh;
+    --canva-width: 500px;
+    --canva-height: 500px;
+}
+
+html{
+    font-family: 'Source Sans Pro', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#F2F2F2;
+}
+
+#container{
+    width: var(--main-width);
+    height: var(--main-height);
+}
+#header{
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+}
+#header h1{
+    margin: .5em;
+    margin-right: 2px;
+    margin-top: .5rem;
+    color: #34343f;
+}
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    min-width: 20vw;
+    min-height: 30rem;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.buttons button{
+    width: 100%;
+    padding: 1rem 4rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.50) 0px 2px 4px;
+    transition: all 0.1s ease-in-out;
+}
+
+input[type='number']{
+    width: 50%;
+    height: 30px;
+    border: none;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.50) 0px 2px 4px;
+    background-color: transparent;
+}
+
+button:hover,
+#input-color:hover{
+    transform: scale(1.05);
+}
+
+#input-color{
+    -webkit-appearance: none;
+    width: 80px;
+    height: 80px;
+    border: none;
+    transition: all 0.1s ease-in-out;
+    border-radius: 10px;
+    padding: 0;
+
+}
+#input-color::-webkit-color-swatch{
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+}
+#input-color::-webkit-color-swatch-wrapper{
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+}
+
+/* #rgb{
+    background-color: ;
+}*/
+#gray-scale{
+    background-color: #bdbdbd;
+}
+#eraser{
+    background-color: #e795dc
+}
+.grid{
+    min-width: var(--canva-width);
+    min-height: var(--canva-height);
+    background-color: #F2EDE4;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+} 
