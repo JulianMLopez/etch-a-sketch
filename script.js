@@ -2,12 +2,12 @@ const canvas = document.getElementById('canvas');
 const inputNumber = document.getElementById('number');
 const color = document.getElementById('input-color');
 const rgb = document.getElementById('rgb');
-const grayscale = document.getElementById('gray-scale');
+const grayScale = document.getElementById('gray-scale');
 const eraser = document.getElementById('eraser');
 
 let paintColor = color.value;
 let isRGB = false;
-let isGrayscale = false;
+let isGrayScale = false;
 let isEraser = false;
 
 inputNumber.addEventListener('change', (e)=>{
@@ -17,26 +17,26 @@ inputNumber.addEventListener('change', (e)=>{
 
 color.addEventListener('change', (e) => {
     isEraser = false;
-    isGrayscale = false;
+    isGrayScale = false;
     isRGB = false;
     paintColor = e.target.value;
 });
 
 rgb.addEventListener('click', (e) => {
     isEraser = false;
-    isGrayscale = false;
+    isGrayScale = false;
     isRGB = true;
 });
 
-grayscale.addEventListener('click', (e) => {
+grayScale.addEventListener('click', (e) => {
     isEraser = false;
     isRGB = false;
-    isGrayscale = true;
+    isGrayScale = true;
 });
 
 eraser.addEventListener('click', (e) => {
     isRGB = false;
-    isGrayscale = false;
+    isGrayScale = false;
     isEraser = true;
 });
 
@@ -59,8 +59,8 @@ function createDiv(grid){
     div.addEventListener('mouseover', (e) => {
         if(isRGB){
             div.style.backgroundColor = paintRGB();
-        } else if(isGrayscale){
-            div.style.backgroundColor = paintGrayscale(div.style.backgroundColor);
+        } else if(isGrayScale){
+            div.style.backgroundColor = paintGrayScale(div.style.backgroundColor);
         } else if(isEraser){
             div.style.backgroundColor = paintEraser();
         } else{
@@ -79,13 +79,12 @@ function paintRGB(){
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
 
-    return `rgba(0, 0, 0, ${opacity + 0.1})`;
+    return `rgba(${r}, ${g}, ${b}, 1`;
 }
 
-function paintGrayscale(color){
-    if(!color.includes('rgba')) return 'rgba 0, 0, 0, 0.1'
+function paintGrayScale(color){
     let opacity = Number(color.slice(-4,-1));
-    return `rgba(0, 0, 0, ${opactiy + 0.1})`;
+    return `rgba(0, 0, 0, ${opacity + 0.1})`;
 }
 
 function paintEraser(){
