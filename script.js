@@ -10,6 +10,8 @@ let isRGB = false;
 let isGrayScale = false;
 let isEraser = false;
 
+
+
 inputNumber.addEventListener('change', (e)=>{
     cleanCanvas();
     createGrid(e.target.value);
@@ -92,3 +94,14 @@ function paintEraser(){
 }
 
 createGrid(inputNumber.value);
+
+function rgbColor(){
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    let bgColor = `rgba(${r},${g},${b}, 1)`;
+
+    document.getElementById('rgb').style.backgroundColor = bgColor;
+}
+
+rgbColor();
