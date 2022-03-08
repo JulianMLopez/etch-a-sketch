@@ -95,13 +95,11 @@ function paintEraser(){
 
 createGrid(inputNumber.value);
 
-function rgbColor(){
+setInterval(function rgbColor(){
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
-    let bgColor = `rgba(${r},${g},${b}, 1)`;
+    let bgColor = `rgba(${r},${g},${b}, .5)`;
 
     document.getElementById('rgb').style.backgroundColor = bgColor;
-}
-
-rgbColor();
+}, 1670);
