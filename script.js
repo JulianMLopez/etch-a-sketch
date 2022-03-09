@@ -60,15 +60,18 @@ function createDiv(grid){
 
     div.addEventListener('mouseover', (e) => {
         if(isRGB){
-            div.style.backgroundColor = paintRGB();
-        } else if(isGrayScale){
-            div.style.backgroundColor = paintGrayScale(div.style.backgroundColor);
-        } else if(isEraser){
-            div.style.backgroundColor = paintEraser();
-        } else{
-            div.style.backgroundColor = paintColor;
+           return div.style.backgroundColor = paintRGB()
+        } 
+        if(isGrayScale){
+            return div.style.backgroundColor = paintGrayScale(div.style.backgroundColor);
+        } 
+        if(isEraser){
+            return div.style.backgroundColor = paintEraser();
+        } 
+        return div.style.backgroundColor = paintColor;
         }
-    });
+    );
+
     grid.appendChild(div);
 }
 
@@ -88,10 +91,11 @@ function paintGrayScale(color){
     let opacity = Number(color.slice(-4,-1));
     if (!color.includes('rgba')){
         return 'rgba(0, 0, 0, 0.1)';
-    } else {
-    return `rgba(0, 0, 0, ${opacity + 0.1})`;
     }
+
+    return `rgba(0, 0, 0, ${opacity + 0.1})`;
 }
+
 
 function paintEraser(){
     return `transparent`;
