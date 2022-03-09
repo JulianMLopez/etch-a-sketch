@@ -86,11 +86,15 @@ function paintRGB(){
 
 function paintGrayScale(color){
     let opacity = Number(color.slice(-4,-1));
+    if (!color.includes('rgba')){
+        return 'rgba(0, 0, 0, 0.1)';
+    } else {
     return `rgba(0, 0, 0, ${opacity + 0.1})`;
+    }
 }
 
 function paintEraser(){
-    return 'transparent';
+    return `transparent`;
 }
 
 createGrid(inputNumber.value);
